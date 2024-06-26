@@ -15,4 +15,8 @@ contract Token is ERC20("salvador", "savy"), Ownable(msg.sender){
     function burnToken(uint256 amount) external {
         _burn(msg.sender, amount);
     }
+
+    function transferToken(uint amount, address recipient) external returns (bool){
+        return transfer(recipient, amount);
+    }
 }
